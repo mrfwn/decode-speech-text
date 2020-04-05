@@ -38,7 +38,7 @@
 
 
   ## Features:
-  - Login/Create/Update/Dlete Transcriptions
+  - List/Create/Update/Delete Transcriptions
 
 </div>
 
