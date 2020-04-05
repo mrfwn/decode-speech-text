@@ -1,12 +1,26 @@
+import { Op } from 'sequelize';
 import Transcription from '../models/Transcription';
 
 class UserController {
   async index(req, res) {
-    const { page = 1 } = req.query;
+    const {
+      title = '%%',
+      program = '%%',
+      owner = '%%',
+      locality = 'pe',
+      text = '%%',
+    } = req.query;
     const appointments = await Transcription.findAll({
+      where: {
+        [Op.and]: {
+          program: { [Op.like]: program },
+          title: { [Op.like]: title },
+          owner: { [Op.like]: owner },
+          text: { [Op.like]: text },
+        },
+        locality,
+      },
       order: ['created_at'],
-      limit: 20,
-      offset: (page - 1) * 20,
     });
     return res.json(appointments);
   }
