@@ -7,7 +7,7 @@ class UserController {
       title = '%%',
       program = '%%',
       owner = '%%',
-      locality = 'pe',
+      locality = '%%',
       text = '%%',
     } = req.query;
     const appointments = await Transcription.findAll({
@@ -17,8 +17,8 @@ class UserController {
           title: { [Op.like]: title },
           owner: { [Op.like]: owner },
           text: { [Op.like]: text },
+          locality: { [Op.like]: locality },
         },
-        locality,
       },
       order: ['created_at'],
     });
