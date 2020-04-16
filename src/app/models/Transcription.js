@@ -6,9 +6,12 @@ class Transcription extends Model {
       {
         title: Sequelize.STRING,
         program: Sequelize.STRING,
-        owner: Sequelize.STRING,
-        text: Sequelize.STRING,
+        name: Sequelize.STRING,
+        login: Sequelize.STRING,
+        formated_date: Sequelize.STRING,
+        text: Sequelize.TEXT,
         locality: Sequelize.STRING,
+        accumulated_time : Sequelize.INTEGER,
       },
       {
         sequelize,

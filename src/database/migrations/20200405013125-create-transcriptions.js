@@ -15,15 +15,27 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      owner: {
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      login: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       text: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       locality: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      accumulated_time: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      formated_date:{
         type: Sequelize.STRING,
         allowNull: false,
       },
